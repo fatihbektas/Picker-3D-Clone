@@ -432,8 +432,8 @@ MonoBehaviour:
   amountText: {fileID: 7849845973345380835}
   maxAmount: 10
   currentAmount: 0
-  leftGate: {fileID: 338109900892280777}
-  rightGate: {fileID: 7919380454386530143}
+  leftGateAnimator: {fileID: 338109900892280777}
+  rightGateAnimator: {fileID: 7919380454386530143}
 --- !u!1 &3727164779203112709
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,8 +599,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -960,7 +960,7 @@ Transform:
   m_GameObject: {fileID: 6223880920541985981}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.066, y: 0, z: 1.72}
-  m_LocalScale: {x: 0.4087718, y: 3.7968318, z: 0.826586}
+  m_LocalScale: {x: 0.4087718, y: 3.7968311, z: 0.82658595}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6223880920645082819}

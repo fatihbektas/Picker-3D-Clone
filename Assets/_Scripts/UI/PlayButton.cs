@@ -3,18 +3,25 @@ using UnityEngine.UI;
 
 public class PlayButton : MonoBehaviour
 {
+    [SerializeField] private Button playButton;
+    
     private void Start()
     {
-        GetComponent<Button>().onClick.AddListener(PlayGame);
         EventManager.Instance.OnPlay += CloseButton;
     }
-
-    private void PlayGame()
+    
+    private void OnDestroy()
     {
+        playButton.onClick.RemoveListener(PlayGame);
+    }
+    
+    private static void PlayGame()
+    {
+        Debug.Log("PlayGame executed");
         EventManager.Instance.OnPlay?.Invoke();
     }
-
-    public void CloseButton()
+    
+    private void CloseButton()
     {
         gameObject.SetActive(false);
     }

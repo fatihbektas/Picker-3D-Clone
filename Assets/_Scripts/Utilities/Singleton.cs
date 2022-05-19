@@ -6,13 +6,9 @@ public class Singleton<T> : MonoBehaviour where T : Component
 
     private void Awake()
     {
-        if (Instance == null)
-        {
+        if (Instance != null && Instance != this as T)
+            Destroy(Instance);
+        else
             Instance = this as T;
-            return;
-        }
-
-        Destroy(Instance);
-        Instance = this as T;
     }
 }

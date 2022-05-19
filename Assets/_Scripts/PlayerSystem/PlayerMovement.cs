@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [Range(1, 5000)] [SerializeField] private float threshHold;
 
     [SerializeField] private Camera camera;
-    public bool _isActive;
+    public bool isActive;
     private float _deltaX, _firstXPos, _secondXPos;
     private Rigidbody _rigidbody;
 
@@ -38,12 +38,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void MoveForward()
     {
-        if (!_isActive) return;
+        if (!isActive) return;
         _rigidbody.velocity = Vector3.forward * playerData.speed;
     }
 
     private void MoveHorizontal()
     {
+        if (!isActive) return;
         _rigidbody.AddForce(Vector3.right * _deltaX, ForceMode.VelocityChange);
         _firstXPos = _secondXPos;
     }
@@ -60,16 +61,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Activate()
+    private void Activate()
     {
         Debug.Log("Player has activated");
-        _isActive = true;
+        isActive = true;
     }
 
-    public void Deactivate()
+    private void Deactivate()
     {
         _rigidbody.velocity = Vector3.zero;
         Debug.Log("Player has stopped");
-        _isActive = false;
+        isActive = false;
     }
 }

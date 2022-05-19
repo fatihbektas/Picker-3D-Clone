@@ -14,9 +14,9 @@ public abstract class CollectableBase : MonoBehaviour
         if (other.CompareTag("CollectArea")) EventManager.Instance.OnStop -= MoveOnZ;
     }
 
-    protected void MoveOnZ()
+    private void MoveOnZ()
     {
-        transform.DOMoveZ(transform.position.z + 7f, 1f).OnComplete(() => StartCoroutine(ShowBlowEffect()));
+        transform.DOMoveZ(transform.position.z + 5.5f, 1f).OnComplete(() => StartCoroutine(ShowBlowEffect()));
     }
 
     private IEnumerator ShowBlowEffect()
