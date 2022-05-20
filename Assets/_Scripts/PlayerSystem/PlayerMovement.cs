@@ -63,12 +63,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Activate()
     {
+        print("1");
         isActive = true;
+        _rigidbody.isKinematic = false;
     }
 
     private void Deactivate()
     {
-        _rigidbody.velocity = Vector3.zero;
         isActive = false;
+        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.isKinematic = true;
     }
 }

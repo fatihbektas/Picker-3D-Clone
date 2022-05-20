@@ -22,5 +22,10 @@ public class LevelSection : MonoBehaviour
         var tempColor = sectionList[id].color;
         tempColor.a = 1f;
         sectionList[id].color = tempColor;
+
+        if (id == 2)
+        {
+            
+        }
     }
 }
