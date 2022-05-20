@@ -8,6 +8,8 @@ public class CheckPointDrawer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI amountText;
     [SerializeField] private int maxAmount;
     [SerializeField] private int currentAmount;
+    [SerializeField] private int sectionId;
+
 
     private void Start()
     {
@@ -24,7 +26,8 @@ public class CheckPointDrawer : MonoBehaviour
         if (other.CompareTag("CheckPoint")) EventManager.Instance.OnStop?.Invoke();
     }
 
-    public static event Action<Transform> OnSectionCompleted;
+    public static event Action<Transform> OnCheckPointArrived;
+    public static event Action<int> OnSectionCompleted;
 
     private void CountObjects()
     {
@@ -38,8 +41,9 @@ public class CheckPointDrawer : MonoBehaviour
 
     private IEnumerator ContinueLevel()
     {
-        OnSectionCompleted?.Invoke(transform.parent.parent);
+        OnCheckPointArrived?.Invoke(transform.parent.parent);
         yield return new WaitForSeconds(1.5f);
+        OnSectionCompleted?.Invoke(sectionId);
         EventManager.Instance.OnContinue?.Invoke();
     }
 }

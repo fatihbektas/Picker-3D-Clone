@@ -7,6 +7,7 @@ public class PlatformManager : Singleton<PlatformManager>
 
     public void CreatePlatform()
     {
-        Instantiate(platformPrefab, finishTransform);
+        var level = Instantiate(platformPrefab, finishTransform);
+        level.transform.localScale = Vector3.one;
     }
 }

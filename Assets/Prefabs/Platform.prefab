@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6062c3b6533424357bf50b380ee77c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sectionId: 0
   leftGateAnimator: {fileID: 2158529105050300030}
   rightGateAnimator: {fileID: 8404523334418960104}
   destinationCheckpoint: {fileID: 5699935733968906540}
@@ -382,6 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6062c3b6533424357bf50b380ee77c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sectionId: 0
   leftGateAnimator: {fileID: 2158529105194335737}
   rightGateAnimator: {fileID: 8404523335134240111}
   destinationCheckpoint: {fileID: 5699935733241608875}
@@ -554,6 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6062c3b6533424357bf50b380ee77c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sectionId: 0
   leftGateAnimator: {fileID: 2158529105077092897}
   rightGateAnimator: {fileID: 8404523334983557815}
   destinationCheckpoint: {fileID: 5699935733124334963}

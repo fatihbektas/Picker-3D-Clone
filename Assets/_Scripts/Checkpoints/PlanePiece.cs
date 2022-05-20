@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlanePiece : MonoBehaviour
 {
+    [SerializeField] private int sectionId;
+
     [SerializeField] private Animator leftGateAnimator;
     [SerializeField] private Animator rightGateAnimator;
     public Transform destinationCheckpoint;
@@ -10,12 +12,12 @@ public class PlanePiece : MonoBehaviour
 
     private void OnEnable()
     {
-        CheckPointDrawer.OnSectionCompleted += MovePlaneUp;
+        CheckPointDrawer.OnCheckPointArrived += MovePlaneUp;
     }
 
     private void OnDisable()
     {
-        CheckPointDrawer.OnSectionCompleted -= MovePlaneUp;
+        CheckPointDrawer.OnCheckPointArrived -= MovePlaneUp;
     }
 
     private void MovePlaneUp(Transform transform)
