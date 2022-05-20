@@ -9,6 +9,7 @@ public class CheckPointDrawer : MonoBehaviour
     [SerializeField] private int maxAmount;
     [SerializeField] private int currentAmount;
     [SerializeField] private int sectionId;
+    private bool isOpened;
 
 
     private void Start()
@@ -26,14 +27,17 @@ public class CheckPointDrawer : MonoBehaviour
         if (other.CompareTag("CheckPoint")) EventManager.Instance.OnStop?.Invoke();
     }
 
-    public static event Action<Transform> OnCheckPointArrived;
-    public static event Action<int> OnSectionCompleted;
+    public static event Action<Transform, int> OnCheckPointArrived;
 
     private void CountObjects()
     {
         currentAmount++;
         amountText.text = $"{currentAmount}/{maxAmount}";
-        if (currentAmount >= maxAmount) StartCoroutine(ContinueLevel());
+        if (currentAmount >= maxAmount && isOpened == false)
+        {
+            isOpened = true;
+            StartCoroutine(ContinueLevel());
+        }
 
         //GameManager.Instance.FailPanel();
     }
@@ -41,9 +45,8 @@ public class CheckPointDrawer : MonoBehaviour
 
     private IEnumerator ContinueLevel()
     {
-        OnCheckPointArrived?.Invoke(transform.parent.parent);
+        OnCheckPointArrived?.Invoke(transform.parent.parent, sectionId);
         yield return new WaitForSeconds(1.5f);
-        OnSectionCompleted?.Invoke(sectionId);
         EventManager.Instance.OnContinue?.Invoke();
     }
 }
