@@ -63,14 +63,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Activate()
     {
-        Debug.Log("Player has activated");
         isActive = true;
     }
 
     private void Deactivate()
     {
         _rigidbody.velocity = Vector3.zero;
-        Debug.Log("Player has stopped");
         isActive = false;
     }
 }
